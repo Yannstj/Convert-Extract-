@@ -17,34 +17,13 @@ app.post("/extract-text", (req, res) => {
     }
 
     pdfParse(req.files.pdfFile).then(result => {
-        const regexSiteName = /[^\s]+/
-        const regexDateExam = /Le(.*)à/
+        const siteName = /[^\s]+/
 
-        res.write(regexSiteName.exec(result.text));
-        res.end(regexDateExam.exec(result.text));
-        res.send(dataArray.push(result.text));
-         res.writeHead(302)
-        //res.sendStatus(200)
+        res.send(siteName.exec(result.text));
+        dataArray.push(result.text);
         console.log(dataArray)
-        
     });
     
 });
 
 app.listen(5500);
-
-
-
-// function splitStr(str) {
-      
-//     // Function to split string
-//     const string = str.split("+");
-      
-//     console.log(string);
-// }
-  
-// // Initialize string
-// var str = "Welcome*to*GeeksforGeeks";
-  
-// // Function call
-// splitStr(str);  
