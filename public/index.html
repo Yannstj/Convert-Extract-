@@ -1,20 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
+    <link rel="stylesheet" href="css/style.css">
 
+    <title>Extraction de Donnée via PDF</title>
+</head>
 <body>
     <input type="file" id="inpFile">
-    <button type="button" id="btnUpload">Télécharger</button>
+    <button type="button" id="btnUpload">Upload</button>
     <br>
     <br>
-    <textarea style="width: 300px; height: 150px;" id="resultText"
-        placeholder="PDF exam"></textarea>
+    <textarea style="width: 300px; height: 150px;" id="resultText" placeholder="Your PDF text will appear here...">
+
+    </textarea>
+    <br>
+    <br>
+    <button id="show-modal-btn">Choix de la Modalité</button>
+
+    <div id="overlay">
+        <div id="modal">
+            <div>
+                <button id="close-modal-btn">Fermer</button>
+            </div>
+            <div>
+                <p>Choix de la Modalité :</p>
+                <button type="button" id="btnRadiographie">Radiographie</button>
+                <button type="button" id="btnEchographie">Échographie</button>
+                <button type="button" id="btnRadioEcho">Toutes Modalités</button>
+                <button type="button" id="btnAnnuler">Annuler</button>
+            </div>
+        </div>
+    </div>
+
+    <button id="btnConnect">TEST CONNECT TO API</button>
+    <img src="" id="img"></img>
+
+    <!-- Scritp PDF -->
     <script>
         const inpFile = document.getElementById("inpFile");
         const btnUpload = document.getElementById("btnUpload");
@@ -32,9 +56,138 @@
                 return response.text();
             }).then(extractedText => {
                 resultText.value = extractedText.trim();
-            });   
+            });
         });
     </script>
-</body>
 
+    <!-- Script Overlay -->
+    <script>
+        const overlay = document.querySelector("#overlay");
+        document.querySelector("#show-modal-btn").addEventListener("click", () => {
+            overlay.style.display = "block";
+        });
+        document.querySelector("#close-modal-btn").addEventListener("click", () => {
+            overlay.style.display = "none";
+        });
+    </script>
+
+    <!-- <script src="../btnModalite.js"></script>
+    <script src="../modalite.js"></script> -->
+
+    <script>
+            //const URLTEST = 'https://dog.ceo/api/breeds/image/random';
+            //const URLTEST = 'https://randomuser.me/api/?results=5'
+            const URLTEST = 'http://localhost:4000/api/patients';
+            //const URLTEST = 'http://10.35.135.112:4000/api/examens';
+            
+
+             async function loadPatient () {
+                 const response = await fetch 
+                 (URLTEST, {
+                      method: 'GET',
+                      headers: {"Origin": "*"},
+                 })
+                 console.log(response)
+                 const patients = await response.json();
+
+             console.log(patients)
+             }
+
+             loadPatient()
+
+          async function addData () {
+
+          const nestedData = {patient: {birthday: "19561130", code_value: "1245235", code_meaning: "INSEE", name: "Maggie^SIMPSON", ipp: "0353353", sex: "F"}};
+
+           const postData = await fetch("http://localhost:4000/api/patients", {
+                    method: 'POST',
+                    headers: { 
+                        //"Origin": "*",
+                        //"Access-Control-Request-Method": "POST",
+                        "Content-Type": "application/json",
+                        "Accept": "application/json"
+                    },
+                    body: JSON.stringify(nestedData)
+                    
+                })
+                console.log(postData)
+                const data = await postData.json();
+                console.log(data)
+                //console.log(addPatients)
+                //console.log(nestedData)
+                //.then(response => response.json())
+                //.then(json => console.log(json))
+                // .then(res => res.json())
+                // .then(response => console.log(response))
+            }
+                addData()
+                
+
+    </script>
+    
+
+    <!-- <script>
+    // POST request using fetch()
+    const dataSimpson = JSON.stringify({
+        const dataSimpson = JSON.stringify({
+                
+            })
+            
+
+        })
+    
+        fetch("http://localhost:4000/api/patients", {
+
+            // Adding method type
+            method: "POST",
+            mode: 'no-cors',
+            
+            // Adding headers to the request
+            headers: {
+                "Content-type": "application/json; charset=UTF-8"
+            }
+        })
+
+            // Displaying results to console
+            .then(json => console.log(json));
+
+    </script> -->
+
+    <script>
+        window.addEventListener('load', function () {
+                document.getElementById("btnRadiographie").addEventListener('click', function () {
+                    btnRadiographie = true;
+                    console.log("SR");
+                });
+            });
+
+            //var btnEchographie = false;
+
+            window.addEventListener('load', function () {
+                document.getElementById("btnEchographie").addEventListener('click', function () {
+                    btnEchographie = true;
+                    console.log("US");
+                });
+            });
+
+            //var btnRadioEcho = false;
+
+            window.addEventListener('load', function () {
+                document.getElementById("btnRadioEcho").addEventListener('click', function () {
+                    btnRadioEcho = true;
+                    console.log("US-SR");
+                });
+            });
+
+            //var btnAnnuler = false;
+
+            window.addEventListener('load', function () {
+                document.getElementById("btnAnnuler").addEventListener('click', function () {
+                    btnAnnuler = true;
+                    console.log(btnAnnuler);
+                });
+            });
+    </script>
+
+</body>
 </html>
