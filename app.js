@@ -6,7 +6,7 @@ const fileUpload = require("express-fileupload");
 
 const interfaceRoutes = require('./routes/interface')
 const extractRoutes = require('./routes/extract')
-const postApiPatientRoutes = require('./routes/postApiPatient')
+const postApiPatientRoutes = require('./routes/postApiPatients')
 
 
 const app = express();
@@ -23,4 +23,4 @@ app.use(interfaceRoutes.interfaceRouter)
 app.use(extractRoutes.extractRouter)
 app.use(postApiPatientRoutes.postApiRouter)
 
-app.listen(8080); 
+app.listen(8080);
