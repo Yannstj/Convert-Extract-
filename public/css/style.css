@@ -1,0 +1,26 @@
+#overlay {
+  display: none;
+  justify-content: center;
+  margin: auto;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  background-color: gray;
+  width: 50%;
+  height: 50%;
+}
+
+#modal {
+  max-width: 600px;
+  height: 300px;
+  margin: auto;
+  bottom: white;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
