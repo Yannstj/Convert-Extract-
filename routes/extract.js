@@ -1,11 +1,9 @@
-const express = require('express')
+const express = require("express");
 
+const extractController = require("../controllers/extract");
 
-const extractController = require('../controllers/extract')
+const router = express.Router();
 
-const router = express.Router()
+router.post("/extract-text", extractController.extractPdf);
 
-router.post('/extract-text', extractController.extractPdf )
-
-exports.extractRouter = router
-
+exports.extractRouter = router;
