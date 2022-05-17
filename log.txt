@@ -1,0 +1,78 @@
+[
+
+  '\n\nLannion',      '',               'Commentaire',
+
+  'Patient:\nLe',     '17/05/2022',     'à',
+
+  '17h44',            '',               '\nMonsieur',
+
+  '',                 'LE',             'BARILLEC',
+
+  'SEBASTIEN',        '',               'Moncabinetradio.fr',
+
+  '\n12/09/1977',     '(44',            'ans',
+
+  ')Manip',           ':',              'Consentement:\nDr',
+
+  'FERRARI',          'Cecile',         'Salle',
+
+  ':OUI',             '',               '',
+
+  '',                 '',               '',
+
+  '',                 '',               '',
+
+  '',                 '',               '',
+
+  '',                 '',               '',
+
+  '',                 '',               '',
+
+  '',                 '',               '',
+
+  '',                 '',               '',
+
+  '',                 '',               '',
+
+  '',                 '',               '',
+
+  '',                 '',               '',
+
+  '',                 '',               '',
+
+  '',                 '',               '',
+
+  'NON\n',            'Prescription',   ':RC',
+
+  '',                 '\nObservatoire', 'de',
+
+  'la',               'Senologie',      ':',
+
+  '\nCirconstance:',  '\nDO',           '/',
+
+  'DI',               '/',              'SP',
+
+  '/',                'SK',             '/',
+
+  'SC',               '\nMode',         "d'adressage",
+
+  ':',                '\nSans',         '/',
+
+  'Campagne',         '/',              'MG',
+
+  '/',                'GY',             '/',
+
+  'GP',               '/',              'Oncologie',
+
+  '/',                'Autres',         '/',
+
+  'Non\ndocumenté\n',
+
+  ... 269 more items
+
+]
+
+dataPDF[14] = MoncabinetRadio.net
+
+
+Nom composé + Mot composé (Lannion/Saint Helier).
