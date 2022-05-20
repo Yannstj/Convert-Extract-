@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- CSS only -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
+      crossorigin="anonymous"
+    />
+
+    <link rel="stylesheet" href="css/style.css" />
+
+    <title>Dépose pdf</title>
+  </head>
+  <body>
+    <div id="container">
+      <input type="file" id="inpFile" />
+      <!--type file parcour l'ordinateur -->
+      <div id="uploadSection">
+        <button
+          class="btn btn-outline-secondary"
+          onclick="document.getElementById('inpFile').click()"
+        >
+          Sélectionnez un PDF
+        </button>
+        <div class="drop-zone">
+          <span class="drop-zone__prompt"> Ou glissez un PDF ici</span>
+          <input
+            type="file"
+            name="myFile"
+            class="drop-zone__input"
+            id="inpFile"
+          />
+        </div>
+      </div>
+      <div id="modal">
+        <button type="button" class="btn btn-secondary" id="btnRadiographie">
+          Radiographie
+        </button>
+        <button type="button" class="btn btn-secondary" id="btnEchographie">
+          Échographie
+        </button>
+        <button type="button" class="btn btn-secondary" id="btnRadioEcho">
+          Toutes Modalités
+        </button>
+      </div>
+      <div id="recapArray">
+        <table>
+          <tr>
+            <th>NOM</th>
+            <th>PRÉNOM</th>
+            <th>DATE DE NAISSANCE</th>
+            <th>IPP</th>
+            <th>MODALITÉ</th>
+          </tr>
+          <tr>
+            <td>SIMPSON</td>
+            <td>BART</td>
+            <td>07/05/1997</td>
+            <td>283266</td>
+            <td>US-SR</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+
+    <script src="js/main.js"></script>
+  </body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <title>Dépose pdf</title>
+</head>
+<body>
+    <h3>Choisissez un PDF</h3>
+    <br>
+    <input type="file" id="inpFile"> <!-- type file parcour l'ordinateur -->
+    <!-- <div id=dropFile draggable="true"> Drop area </div> -->
+    <br>
+    <br>
+     <div id="modal">
+                <div id="btnUpload">
+                    <p>Choix de la Modalité :</p>
+                    <button type="button" class="btn btn-secondary" id="btnRadiographie">Radiographie</button>
+                    <button type="button" class="btn btn-secondary" id="btnEchographie">Échographie</button>
+                    <button type="button" class="btn btn-secondary" id="btnRadioEcho">Toutes Modalités</button>
+                    <!-- <button type="button" class="btn btn-danger" id="btnAnnuler">Annuler</button> -->
+                </div>
+            </div>
+    <br>
+    <br>
+    <output style="width: 300px; height: 150px;" id="resultText"
+        placeholder="Affichage des données extraite"></output>
+        
+        </div>
+
+        <script src="js/main.js"></script>
+    
+</body>
+</html>
